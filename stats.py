@@ -14,10 +14,11 @@ def get_character_count(text):
                 letter_count[lower_letter] = 1
             else:
                 letter_count[lower_letter] += 1
-    for letter in letter_count:
+    for letter, num in letter_count.items():
         letter_stats = {}
+        letter_stats["char"] = letter
+        letter_stats["num"] = num
+        report_list.append(letter_stats)
 
-    return letter_count
 
-def sort_key(letters):
-    return letters
+    return report_list
